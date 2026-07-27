@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redfish-exporter-config
+data:
+  REDFISH_ENDPOINT: "http://redfish-mock:8000"
+  REDFISH_USER: "root"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redfish-exporter-secret
+type: Opaque
+stringData:
+  REDFISH_PASSWORD: "password"
